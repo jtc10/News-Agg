@@ -1,0 +1,393 @@
+
+@import url('https://fonts.googleapis.com/css?family=News+Cycle');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+* {
+  box-sizing: border-box;
+
+  --responsive-nav-color: white;  /* color for links in responsive nav menu */
+  --font-color: #383838;
+  --border-color: #d3d3d3;
+}
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+main {
+  background-color: #F1F3F5;;
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+section {
+  width: 95%;
+  margin: auto;
+
+}
+
+section div {
+  width: 95%;
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+  background-color: var(--responsive-nav-color);
+}
+
+.section-title {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section-title::after {
+  content: ' ';
+  display: block;
+  width: 100px;
+  height: 2px;
+  background-color: var(--font-color);
+  margin: 20px auto 0 auto;
+}
+
+.top-stories h1 {
+  padding-top: 15px;
+}
+
+.card-container {
+  background-color: white;
+  box-shadow: 1px 1px 1px var(--border-color), -1px -1px  1px var(--border-color);
+}
+
+.nav-title,
+.section-title,
+.card-category,
+.list {
+  font-family: 'News Cycle', sans-serif;
+  color: var(--font-color);
+}
+
+.card-title-container a {
+  font-size: 1.5em;
+}
+
+.card-title-container a,
+.card-subtitle {
+  font-family: 'Noto Sans', sans-serif;
+  color: var(--font-color);
+}
+
+.date-source {
+  padding: 0 0 15px 0;
+}
+
+.date-source li {
+  display: inline-block;
+}
+
+.date-source li:first-child {
+  border-right: 1px solid black;
+  padding-right: 5px;
+}
+
+.date-source li:nth-child(2) {
+  padding-left: 5px;
+}
+
+.hide {
+  max-height: 0;
+  overflow: hidden;
+}
+
+
+/********** Responsive Navigation *********/
+
+header {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  max-height: 80px;
+  top: 0;
+  background-color: var(--responsive-nav-color);
+  border-bottom: 1px solid var(--border-color);
+  transition: max-height .3s ease-in-out;
+}
+
+nav {
+  width: 95%;
+  margin: 0 auto;
+  /* max-height: 80px;
+  transition: max-height .3s ease-in-out; */
+}
+
+.responsive-nav-menu {  /* menu that opens upon hamburger click */
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.8);
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  display: none;
+}
+
+.responsive-nav-menu ul {
+    position: absolute;
+    right: 10%;
+    left: 0;
+    top: 15%;
+}
+
+
+.responsive-nav-menu li {
+  color: var(--responsive-nav-color);
+  font-size: 1.5em;
+  padding: 1px;
+  text-transform: uppercase;
+  border: 1px solid var(--responsive-nav-color);
+  border-bottom: none;
+}
+
+.responsive-nav-menu li a {
+  display: block;
+  padding: 1em;
+  color: var(--responsive-nav-color);
+}
+
+.responsive-nav-menu li:hover {
+  background-color: #fffff0;
+}
+
+.responsive-nav-menu li a:hover {
+  color: black;
+}
+
+.responsive-nav-menu li:last-child {
+  border-bottom: 1px solid var(--responsive-nav-color);
+}
+
+.close-menu-container {  /* container for "x" to close nav menu */
+  position: absolute;
+  right: 20px;
+  top:20px;
+  height: 32px;
+  width: 32px;
+  border: 1px solid var(--responsive-nav-color);
+  border-radius: 2px;
+}
+
+.close-menu,
+.close-menu::before {  /* construction for 'x' */
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  border-radius: 10px;
+  background-color: var(--responsive-nav-color);
+}
+
+.close-menu {  /* rotation and styling to make 'x' */
+  transform: translateY(13.5px) translateX(-5px) rotate(45deg) ;
+}
+
+.close-menu::before {
+  transform: rotate(-90deg);
+}
+.menu-toggle-container {  /* container for hamburger */
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  height: 40px;
+  width: 40px;
+}
+
+.hamburger-icon,  /* construction of hamburger */
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: black;
+}
+
+.hamburger-icon{
+  transform: translateY(10px);
+}
+
+.hamburger-icon::after{
+  transform: translateY(15px);
+}
+
+.hamburger-icon::before{
+  transform: translateY(9px);
+}
+
+
+
+
+/********** Top Stories **********/
+/**********             **********/
+
+
+.top-stories-container {
+  width: 95%;
+  margin: auto;
+}
+.card {
+  width: 100%;
+
+}
+.card-category {
+  padding-top: 10px;
+  margin-left: 2.5%;
+}
+.card-image {
+  display: block;
+  width: 95%;
+  height: 40vh;
+  margin: 0 auto 10px auto;
+}
+
+
+/********** Media Queries *********/
+/**********               *********/
+
+@media only screen and (max-width: 360px) {
+  .responsive-nav-menu li {
+    padding: 5px;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width 999px) {
+
+
+}
+
+@media only screen and (min-width: 1000px) {
+
+  /********** Desktop Navigation *********/
+
+  .menu-toggle-container {
+    display: none;
+  }
+
+  /* .fix {
+    display: block;
+    position: static;
+    background-color: white;
+    height: auto;
+    width: auto;
+    text-align: right;
+  }
+
+  .fix ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+  } */
+
+  .responsive-nav-menu {
+    display: block;
+    position: static;
+    background-color: white;
+    height: auto;
+    width: auto;
+    text-align: right;
+  }
+
+  .responsive-nav-menu ul {
+      position: absolute;
+      right: 0;
+      top: 0;
+  }
+
+
+  .responsive-nav-menu li {
+    display: inline-block;
+    color: var(--font-color);
+    font-size: 1em;
+    text-transform: uppercase;
+    border: none;
+    border-bottom: none;
+  }
+
+  .responsive-nav-menu li:hover {
+    transform: scale(1.1);
+  }
+
+  .responsive-nav-menu li:last-child {
+    border-bottom: none;
+  }
+
+  .responsive-nav-menu li a {
+    color: var(--font-color);
+  }
+
+  .responsive-nav-menu li:hover {
+    background-color: var(--responsive-nav-color);
+  }
+
+  /********** Main Sections **********/
+
+  .top-stories-container,
+  .business-stories-container,
+  .entertainment-stories-container,
+  .health-stories-container,
+  .science-stories-container,
+  .sports-stories-container,
+  .technology-stories-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+
+
+  .card-container {
+    width: 45%;
+    height: 75vh;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  footer p {
+    margin-left: 10px;
+  }
+
+  footer h1 {
+    margin-right: 10px;
+  }
+
+  footer p,
+  footer h1 {
+    display: inline-block;
+  }
+
+
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .card-container {
+    width: 30%;
+  }
+}
