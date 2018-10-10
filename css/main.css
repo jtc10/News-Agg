@@ -16,7 +16,7 @@ body {
 }
 
 main {
-  background-color: #F1F3F5;;
+  background-color: #F1F3F5;
   padding-top: 80px;
   padding-bottom: 20px;
 }
@@ -68,8 +68,10 @@ footer {
 }
 
 .card-container {
+  border-radius: 5px;
   background-color: white;
   box-shadow: 1px 1px 1px var(--border-color), -1px -1px  1px var(--border-color);
+  max-width: 471px;
 }
 
 .nav-title,
@@ -82,13 +84,17 @@ footer {
 
 .card-title-container a {
   font-size: 1.5em;
+  font-family: 'Noto Sans', sans-serif;
+  color: #6666ff;
 }
 
-.card-title-container a,
+
 .card-subtitle {
   font-family: 'Noto Sans', sans-serif;
   color: var(--font-color);
 }
+
+
 
 .date-source {
   padding: 0 0 15px 0;
@@ -129,8 +135,6 @@ header {
 nav {
   width: 95%;
   margin: 0 auto;
-  /* max-height: 80px;
-  transition: max-height .3s ease-in-out; */
 }
 
 .responsive-nav-menu {  /* menu that opens upon hamburger click */
@@ -260,6 +264,7 @@ nav {
   width: 95%;
   height: 40vh;
   margin: 0 auto 10px auto;
+  border-radius: 5px;
 }
 
 
@@ -285,21 +290,6 @@ nav {
   .menu-toggle-container {
     display: none;
   }
-
-  /* .fix {
-    display: block;
-    position: static;
-    background-color: white;
-    height: auto;
-    width: auto;
-    text-align: right;
-  }
-
-  .fix ul {
-    position: absolute;
-    right: 0;
-    top: 0;
-  } */
 
   .responsive-nav-menu {
     display: block;
@@ -353,6 +343,7 @@ nav {
   .technology-stories-container {
     display: flex;
     flex-wrap: wrap;
+    max-width: 1000px;
   }
 
 
@@ -385,9 +376,19 @@ nav {
 
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1500px) {
 
+  .top-stories-container,
+  .business-stories-container,
+  .entertainment-stories-container,
+  .health-stories-container,
+  .science-stories-container,
+  .sports-stories-container,
+  .technology-stories-container {
+
+     max-width: 1500px; 
+  }
   .card-container {
-    width: 30%;
+    width: 471px;
   }
 }

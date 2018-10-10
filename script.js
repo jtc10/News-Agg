@@ -15,7 +15,7 @@ let url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=9aaa7238526040
 
 // Responsive Nav Menu
 
-//console.log(!mq1.matches);
+
 
 function openNavMenu() {
   menuToggle[0].addEventListener('click', function () {
@@ -29,7 +29,6 @@ function widthChange() {
   if (mq1.matches) {
     menu[0].style.position = 'static';
     menu[0].classList.remove('hide');
-    //menu[0].classList.add('fix');
   }
 }
 
@@ -75,8 +74,6 @@ function newRequest(section, newCategory) {
   xhr.open('GET', url + 'category=' + newCategory, true);
   xhr.onload = function () {
     var data = JSON.parse(xhr.responseText);
-    //console.log(data);
-    //console.log(titleSection);
     for (var i = 0; i < 7; i++) {
       let date = new Date(data.articles[i].publishedAt);
       let dateString = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
@@ -122,13 +119,8 @@ window.addEventListener('resize', function () {
 
 function smoothScroll(target, duration) {
   let targetSection = document.querySelector(target);
-  //console.log('targetSection: ' + targetSection);
   let targetPosition = targetSection.getBoundingClientRect().top;
-  //console.log('targetPosition: ' + targetPosition);
   let startPosition = window.pageYOffset;
-  //console.log('startPosition: ' + startPosition);
-  // let distance = targetPosition - startPosition;
-  // console.log('distance: ' + distance);
   let startTime = null;
 
   function animation(currentTime) {
@@ -178,38 +170,3 @@ navList.addEventListener('click', function (e) {
   }
 
 });
-
-
-
-//navList.addEventListener('click', function (e) {
-//  console.log(e.target.nodeName);
-//  if (e.target.className == 'business') {
-//    console.log('hello');
-//    newRequest('business');
-//    e.stopPropagation();
-//    e.preventDefault();
-    //menu[0].classList.add('hide');
-//  }
-//}, true);
-
-// Api access
-
-
-//var xhr = new XMLHttpRequest();
-//xhr.open('GET', url + 'category=', true);
-//xhr.onload = function () {
-//  var data = JSON.parse(xhr.responseText);
-//  console.log(data);
-//  for (var i = 0; i < 7; i++) {
-//    cardTitle[i].innerHTML = data.articles[i].title;
-//    cardSubTitle[i].innerHTML = data.articles[i].description;
-//    source[i].innerHTML = data.articles[i].source.name;
-//    if (data.articles[i].urlToImage != null) {
-//      image[i].src = data.articles[i].urlToImage;
-//    }else {
-//      image[i].src = 'no-image.jpg';
-//    }
-//  }
-//};
-
-//xhr.send();
