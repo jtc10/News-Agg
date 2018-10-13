@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=News+Cycle');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
-
+/*branch*/
 * {
   box-sizing: border-box;
 
@@ -386,7 +386,7 @@ nav {
   .sports-stories-container,
   .technology-stories-container {
 
-     max-width: 1500px; 
+     max-width: 1500px;
   }
   .card-container {
     width: 471px;
