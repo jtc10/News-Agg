@@ -4,15 +4,14 @@
 /*branch*/
 * {
   box-sizing: border-box;
-
   --responsive-nav-color: white;  /* color for links in responsive nav menu */
   --font-color: #383838;
   --border-color: #d3d3d3;
 }
+
 body {
   margin: 0;
   padding: 0;
-
 }
 
 main {
@@ -334,13 +333,8 @@ nav {
 
   /********** Main Sections **********/
 
-  .top-stories-container,
-  .business-stories-container,
-  .entertainment-stories-container,
-  .health-stories-container,
-  .science-stories-container,
-  .sports-stories-container,
-  .technology-stories-container {
+/* containers for different news sections */
+   section div {
     display: flex;
     flex-wrap: wrap;
     max-width: 1000px;
@@ -378,15 +372,9 @@ nav {
 
 @media only screen and (min-width: 1500px) {
 
-  .top-stories-container,
-  .business-stories-container,
-  .entertainment-stories-container,
-  .health-stories-container,
-  .science-stories-container,
-  .sports-stories-container,
-  .technology-stories-container {
-
-     max-width: 1500px;
+/* containers for different news sections */
+ section div {
+   max-width: 1500px;
   }
   .card-container {
     width: 471px;
