@@ -22,6 +22,7 @@ function openNavMenu() {
       menu[0].classList.remove('hide');
       menu[0].style.position = 'fixed';
       menu[0].style.display = 'block';
+      header[0].style.overflow = 'visible';
     });
 }
 
@@ -35,12 +36,14 @@ function widthChange() {
 function closeNavMenu() {
   menuClose[0].addEventListener('click', function () {
       menu[0].classList.add('hide');
+      header[0].style.overflow = 'hidden';
     });
 }
 
 function clickMenuClose() {
   navList.addEventListener('click', function () {
         menu[0].classList.add('hide');
+        header[0].style.overflow = 'hidden';
       });
 }
 
