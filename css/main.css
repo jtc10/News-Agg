@@ -246,13 +246,12 @@ nav {
 /**********             **********/
 
 
-.top-stories-container {
+/* .top-stories-container {
   width: 95%;
   margin: auto;
-}
+} */
 .card {
   width: 100%;
-
 }
 .card-category {
   padding-top: 10px;
@@ -285,6 +284,12 @@ nav {
 @media only screen and (min-width: 1000px) {
 
   /********** Desktop Navigation *********/
+
+  .card {
+    margin: 0;
+    padding: 0;
+    height: 0;
+  }
 
   .menu-toggle-container {
     display: none;
@@ -333,17 +338,16 @@ nav {
 
   /********** Main Sections **********/
 
-/* containers for different news sections */
-   section div {
+/* containers for different news sections  */
+    section div {
     display: flex;
     flex-wrap: wrap;
     max-width: 1000px;
   }
 
-
-
   .card-container {
     width: 45%;
+    min-height: 600px;
     height: 75vh;
     margin-bottom: 20px;
     overflow: hidden;
@@ -378,5 +382,6 @@ nav {
   }
   .card-container {
     width: 471px;
+
   }
 }
