@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=News+Cycle');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
-/*branch*/
+
 * {
   box-sizing: border-box;
   --responsive-nav-color: white;  /* color for links in responsive nav menu */
