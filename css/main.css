@@ -398,7 +398,9 @@ nav {
 
   .section_card_container {
     width: 49%;
+    min-width: 450px;
     height: 75vh;
+    min-height: 700px;
     overflow: hidden;
   }
 
