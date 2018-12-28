@@ -95,6 +95,7 @@ footer {
   box-shadow: 1px 1px 1px var(--border-color), -1px -1px  1px var(--border-color);
   max-width: 471px;
   height: 75vh;
+  max-height: 900px;
   margin-bottom: 20px;
 }
 
@@ -120,6 +121,7 @@ footer {
   display: block;
   width: 95%;
   height: 40vh;
+  max-height: 500px;
   border-radius: 5px;
 }
 
@@ -311,6 +313,22 @@ nav {
 
 /********** Media Queries *********/
 /**********               *********/
+
+/********** Height **********/
+
+@media only screen and (max-height: 850px) {
+  .section_card_container {
+    height: auto;
+  }
+
+  .menu_close_container {
+    top: 3%;
+  }
+}
+
+
+
+/********** Width ***********/
 
 @media only screen and (max-width: 360px) {
   .nav_menu li {
