@@ -1,31 +1,31 @@
 //API Key: 9aaa7238526040c3af8996c732feb1ea
 
-const menuToggle = document.getElementsByClassName('menu-toggle-container');
-const menuClose = document.getElementsByClassName('close-menu-container');
-const menu = document.getElementsByClassName('responsive-nav-menu');
-const cardTitle = document.getElementsByClassName('card-title');
-const cardSubTitle = document.getElementsByClassName('card-subtitle');
-const image = document.getElementsByClassName('card-image');
-const navList = document.getElementById('nav-list');
+const menuToggle = document.getElementsByClassName('nav_menu_toggle_container');
+const menuClose = document.getElementsByClassName('menu_close_container');
+const menu = document.getElementsByClassName('nav_menu');
+const cardTitle = document.getElementsByClassName('card_title');
+const cardSubTitle = document.getElementsByClassName('card_subtitle');
+const image = document.getElementsByClassName('card_image');
+const navList = document.getElementById('nav_list');
 const nav = document.getElementsByTagName('nav');
 const header = document.getElementsByTagName('header');
 const mq1 = window.matchMedia('screen and (min-width: 999px)');
 const key = '9aaa7238526040c3af8996c732feb1ea';
 let url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=9aaa7238526040c3af8996c732feb1ea&';
 
-// Responsive Nav Menu
+// Nav Menu
 
-
-
+//opens responsive navigation menu
 function openNavMenu() {
   menuToggle[0].addEventListener('click', function () {
       menu[0].classList.remove('hide');
       menu[0].style.position = 'fixed';
-      menu[0].style.display = 'block';
+      menu[0].style.display = 'inline-flex';
       header[0].style.overflow = 'visible';
     });
 }
 
+// shows desktop navigation
 function widthChange() {
   if (mq1.matches) {
     menu[0].style.position = 'static';
@@ -33,6 +33,7 @@ function widthChange() {
   }
 }
 
+//closes responsive nav menu
 function closeNavMenu() {
   menuClose[0].addEventListener('click', function () {
       menu[0].classList.add('hide');
@@ -40,13 +41,14 @@ function closeNavMenu() {
     });
 }
 
+//closes menu when link clicked
 function clickMenuClose() {
   navList.addEventListener('click', function () {
-        menu[0].classList.add('hide');
         header[0].style.overflow = 'hidden';
       });
 }
 
+// Hides menu until screen is scrolled up
 function hideMenu() {
   var prevScrollpos = window.pageYOffset;
   window.onscroll = function () {
@@ -61,6 +63,8 @@ function hideMenu() {
   };
 }
 
+// Function to populate cards with information
+
 function newRequest(section, newCategory) {
 
   if (section == null) {
@@ -71,8 +75,8 @@ function newRequest(section, newCategory) {
     newCategory = '';
   }
 
-  const newsSection = document.querySelectorAll('#' + section + ' ' +  '.card-container .card');
-  const titleSection = document.querySelectorAll('#' + section + ' ' + '.card-container .card .card-title-container');
+  const newsSection = document.querySelectorAll('#' + section + ' ' +  '.section_card_container .card');
+  const titleSection = document.querySelectorAll('#' + section + ' ' + '.section_card_container .card .card_title_container');
   var xhr = new XMLHttpRequest();
   xhr.open('GET', url + 'category=' + newCategory, true);
   xhr.onload = function () {
@@ -110,7 +114,8 @@ openNavMenu();
 closeNavMenu();
 hideMenu();   // hides menu on scroll
 clickMenuClose();  // closes menu when link clicked on resp nav
-window.addEventListener('resize', widthChange);
+window.addEventListener('resize', widthChange);// opens desktop nav
+//closes desktop nav
 window.addEventListener('resize', function () {
   if (!mq1.matches) {
     menu[0].classList.add('hide');
