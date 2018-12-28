@@ -44,11 +44,12 @@ function closeNavMenu() {
 //closes menu when link clicked
 function clickMenuClose() {
   navList.addEventListener('click', function () {
+        menu[0].classList.add('hide');
         header[0].style.overflow = 'hidden';
       });
 }
 
-// Hides menu until screen is scrolled up
+// Hides menu on scroll
 function hideMenu() {
   var prevScrollpos = window.pageYOffset;
   window.onscroll = function () {
