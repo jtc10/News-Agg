@@ -324,6 +324,14 @@ nav {
   .menu_close_container {
     top: 3%;
   }
+  .nav_menu li {
+    padding: 5px;
+    font-size: 1rem;
+  }
+  .nav_menu li a {
+    display: block;
+    padding: 1em;
+  }
 }
 
 
