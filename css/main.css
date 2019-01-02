@@ -123,6 +123,7 @@ footer {
   height: 40vh;
   max-height: 500px;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 /* container for information under image */
@@ -198,6 +199,10 @@ nav {
 .nav_menu_toggle_container {
   height: 40px;
   width: 40px;
+}
+
+.nav_menu_toggle_container:hover {
+  cursor: pointer;
 }
 
 .nav_menu {

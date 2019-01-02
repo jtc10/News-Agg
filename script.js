@@ -41,11 +41,13 @@ function closeNavMenu() {
     });
 }
 
-//closes menu when link clicked
+//closes responsive menu when link clicked
 function clickMenuClose() {
   navList.addEventListener('click', function () {
-        menu[0].classList.add('hide');
-        header[0].style.overflow = 'hidden';
+    if (!mq1.matches) {
+          menu[0].classList.add('hide');
+          header[0].style.overflow = 'hidden';
+        }
       });
 }
 
